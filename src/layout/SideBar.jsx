@@ -30,7 +30,7 @@ const SideBar = () => {
   return (
     <div
       style={{ width: wd }}
-      className="flex flex-col  transition-transform duration-300    shadow-2xl box-shadow pb-5 sticky top-0 max-h-[90vh]"
+      className="flex flex-col  transition-transform duration-300    shadow-2xl box-shadow pb-5 sticky top-0 max-h-[90vh] sm:hidden"
     >
       {/* <div className={`${hide && "invisible"}`}>
         <AiOutlineLeft
