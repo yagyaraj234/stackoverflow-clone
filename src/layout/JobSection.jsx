@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { GoLocation } from "react-icons/go";
 import { BiWorld } from "react-icons/bi";
 
