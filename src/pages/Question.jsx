@@ -1,9 +1,22 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { BsHandThumbsUp, BsChatLeft, BsEye } from "../icons/index";
-// Local data from json file
-import data from "./quest.json";
 
 const Question = () => {
+  const [data, setData] = useState();
+  const apiUrl =
+    "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow";
+  const fetchData = () => {
+    axios.get(apiUrl).then((res) => {
+      // console.log(res.data.items);
+      setData(res.data.items);
+    });
+  };
+
+  useEffect(() => {
+    fetchData();
+  });
   return (
     <div className="text-justify w-full z-0 ">
       {/* Head title */}
@@ -31,8 +44,7 @@ const Question = () => {
           month
         </li>
       </div>
-      {/*  */}
-      {data?.items.map((item) => (
+      {data?.map((item) => (
         <div
           className="flex justify-between py-5 border-b px-10"
           key={item.question_id}
