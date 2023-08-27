@@ -16,8 +16,6 @@ const Header = () => {
   const [searchItem, setSearchItem] = useState();
   const [loading, setLoading] = useState(false);
 
-
-
   const searchData = async (searchText) => {
     setLoading(true);
     try {
@@ -46,28 +44,28 @@ const Header = () => {
   return (
     <div
       onClick={() => setSearchText("")}
-      className="flex  px-10 items-center justify-between py-2"
+      className="flex sm:px-2  px-10 items-center justify-between py-2"
     >
-      <div className="flex gap-7">
+      <div className="flex gap-7 sm:gap-2">
         <img
-          className="h-10"
+          className="h-10 sm:h-8"
           src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Stack_Overflow.png?20210324193649"
           alt="Stackoverflowlogo"
         />
 
-        <AiOutlineMenu className="text-xl mt-4 text-lightgray" />
-        <div className="flex  items-center mt-1 gap-2 ">
+        {/* <AiOutlineMenu className="text-xl mt-4 text-lightgray" /> */}
+        <div className="flex  items-center mt-1 gap-2 sm:border sm:rounded-md sm:px-1">
           <AiOutlineSearch className="text-lg font-bold text-lightgray mt-1" />
           <div className="flex flex-col relative">
             <DebounceInput
               debounceTimeout={500}
               type="text"
               placeholder="Search"
-              className="outline-none  text-sm text-lightgray"
+              className="outline-none  text-sm text-lightgray "
               onChange={(e) => setSearchText(e.target.value)}
             />
 
-            <div className="w-[50vw]  absolute top-5 z-20">
+            <div className="w-[50vw] absolute sm:-left-8 top-5 z-20">
               {searchText !== "" && (
                 <div
                   onClick={() => setSearchText("")}
@@ -94,11 +92,11 @@ const Header = () => {
         </div>
       </div>
       <div className="flex gap-5 text-lightgray">
-        <div className="flex gap-1">
+        <div className="flex gap-1 sm:hidden">
           <IoMdHelpBuoy className="mt-1" />
           <p className="text-sm">Help</p>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-1 sm:hidden">
           <IoMdDesktop className="mt-1" />
           <p className="text-sm">Tour</p>
         </div>

@@ -23,20 +23,20 @@ const FooterList = ({ ...props }) => {
 
 const Footer = () => {
   return (
-    <div className="flex flex-col px-10 relative bottom-0 w-full">
+    <div className="flex flex-col sm:px-2 px-10 relative bottom-0 w-full">
       {/* Footer First Line  */}
       <div className="flex text-lightgray justify-between border-b border-lightgray  py-5 ">
-        <div className="flex text-xs gap-2 list-none">
+        <div className="flex text-xs gap-2  list-none">
           <li>about us</li>
           <li>help</li>
           <li>blog</li>
           <li>chat</li>
-          <li>data</li>
-          <li>legal</li>
-          <li>privacy policy</li>
-          <li>work here</li>
-          <li>advertising info</li>
-          <li>mobile</li>
+          <li className="sm:hidden">data</li>
+          <li className="sm:hidden">legal</li>
+          <li className="sm:hidden">privacy policy</li>
+          <li className="sm:hidden">work here</li>
+          <li className="sm:hidden">advertising info</li>
+          <li className="sm:hidden">mobile</li>
           <li>contact us</li>
           <li>feedback</li>
         </div>
@@ -49,11 +49,11 @@ const Footer = () => {
       </div>
       {/* Second line */}
 
-      <div className="flex text-xs text-lightgray justify-between py-8 border-b border-lightgray">
+      <div className="flex sm:flex-col text-xs text-lightgray justify-between py-8 border-b border-lightgray">
         {/* First column of Footer  */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col  gap-3">
           <p className="uppercase">technology</p>
-          <div className="flex gap-10 justify-between">
+          <div className="flex gap-10 sm:gap-20 justify-between">
             <FooterList
               first="Stack Overflow"
               second="Server Fault"
@@ -78,8 +78,8 @@ const Footer = () => {
         </div>
 
         {/* Second Column of Footer  */}
-        <div className="flex flex-col gap-3">
-          <h1 className="uppercase">Life / arts</h1>
+        <div className="flex flex-col gap-3 sm:hidden">
+          <h1 className="uppercase ">Life / arts</h1>
           <FooterList
             first="Photography"
             second="Science Fiction & Fantasy"
@@ -93,7 +93,7 @@ const Footer = () => {
         </div>
 
         {/* Third Column  */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 sm:hidden">
           <p className="uppercase">Culture / Recreation</p>
           <FooterList
             first="English Language"
@@ -107,7 +107,7 @@ const Footer = () => {
           />
         </div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 sm:hidden">
           <p className="uppercase">Other</p>
           <FooterList
             first="English Language"

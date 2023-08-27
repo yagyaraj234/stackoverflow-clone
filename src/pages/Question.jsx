@@ -18,16 +18,16 @@ const Question = () => {
     fetchData();
   });
   return (
-    <div className="text-justify w-full z-0 ">
+    <div className="text-justify w-full min-h-[80vh] z-0 ">
       {/* Head title */}
-      <div className="text-8xl text-lightgray relative my-2 px-10">
-        <p className="opacity-20">top</p>
-        <p className="text-3xl text-darkgray font-bold absolute top-10">
+      <div className="text-8xl sm:text-5xl text-lightgray relative my-2 px-10 sm:px-2">
+        <p className="opacity-20 ">top</p>
+        <p className="text-3xl sm:text-lg text-darkgray font-bold absolute top-10 sm:top-4">
           Question
         </p>
       </div>
       {/* page subheader  */}
-      <div className="text-xs text-darkgray flex gap-8 border-b py-5 px-10">
+      <div className="text-xs text-darkgray flex gap-8 sm:gap-2 border-b py-5 px-10 sm:px-2">
         <li className="bg-orange text-white p-1 px-2 font-semibold rounded-2xl">
           interesting
         </li>
