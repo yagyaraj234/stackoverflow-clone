@@ -1,10 +1,34 @@
-import React from "react";
-import { Button, Timeline } from "flowbite-react";
-import { PiBagSimpleBold } from "react-icons/pi";
+import { Link } from "react-router-dom";
+import { GoLocation } from "react-icons/go";
+import { BiWorld } from "react-icons/bi";
 
-const jobs=[
-  {}
-]
+const jobs = [
+  {
+    name: "Wallet Hub",
+    type: "Front End Developer with Angular",
+    location: "Washington, DC",
+    jobtype: "Remote",
+    skill1: "angular js",
+    skill2: "cordova",
+  },
+  {
+    name: "Perk.com INC",
+    type: "Senior iOS / iPhone Engineer",
+    location: "Bengaluru, India",
+    jobtype: "In Office",
+    skill1: "iOS",
+    skill2: "iphone",
+  },
+  {
+    name: "SparkNET Technologies",
+    type: "Software Engineer",
+    salary: "$25,000 - $40000",
+    location: "No Location",
+    jobtype: "Remote",
+    skill1: "iOS",
+    skill2: "ruby on rails",
+  },
+];
 
 const JobSection = () => {
   return (
@@ -18,52 +42,37 @@ const JobSection = () => {
       </div>
       {/* Jobs Listing */}
 
-      {/* <Timeline>
-        <Timeline.Item>
-          <Timeline.Point />
-          <Timeline.Content className="text-darkgray">
-            <Timeline.Title className="text-sm text-blue">
-              Front End Developer with Angular
-            </Timeline.Title>
-            <Timeline.Time>Wallet Hub</Timeline.Time>
-            <Timeline.Body>
-              <div className="flex flex-col">
-                <div className="flex text-xxs">
-                  <div className="border border-lightgray rounded-lg px-2">
-                    <p>Washington, Dc</p>
-                  </div>
-                  <div className="border border-lightgray rounded-lg px-2">
-                    <p>Remote</p>
-                  </div>
-                </div>
+      <ol className="relative border-l border-gray-200 dark:border-gray-700">
+        {jobs?.map((job) => (
+          <li className="mb-10 ml-4">
+            <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-700 dark:bg-gray-300" />
+
+            <h3 className=" font-semibold text-blue text-sm">{job.type}</h3>
+            <p className="text-darkgray text-sm">{job.name}</p>
+
+            <p className="text-xs text-green-500">{job?.salary}</p>
+            <div className="flex gap-3 text-xs text-lightgray my-1">
+              <div className="flex gap-1">
+                <GoLocation className="mt-[2px]" />
+                <p>{job.location}</p>
               </div>
-            </Timeline.Body>
-          </Timeline.Content>
-        </Timeline.Item>
-        <Timeline.Item>
-          <Timeline.Point />
-          <Timeline.Content className="text-darkgray">
-            <Timeline.Title className="text-sm text-blue">
-              Front End Developer with Angular
-            </Timeline.Title>
-            <Timeline.Time>Wallet Hub</Timeline.Time>
-            <Timeline.Body>
-              <div className="flex flex-col">
-                <div className="flex text-xxs">
-                  <div className="border border-lightgray rounded-lg px-2">
-                    <p>Washington, Dc</p>
-                  </div>
-                  <div className="border border-lightgray rounded-lg px-2">
-                    <p>Remote</p>
-                  </div>
-                </div>
+              <div className="flex gap-1">
+                <BiWorld className="mt-[2px]" />
+                <p>{job.jobtype}</p>
               </div>
-            </Timeline.Body>
-          </Timeline.Content>
-        </Timeline.Item>
-      </Timeline>
-       */}
-       
+            </div>
+            <div className="flex gap-3 text-xs text-lightgray my-2">
+              <div className="flex gap-1 border border-lightgray px-2 rounded-2xl">
+                <p>{job.skill1}</p>
+              </div>
+              <div className="flex gap-1 border border-lightgray px-2 rounded-2xl">
+                <p>{job.skill2}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p className="text-blue text-sm uppercase">View all Jobs </p>
     </div>
   );
 };
